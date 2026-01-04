@@ -1,0 +1,26 @@
+@import "./src/shared/components/animations.css";
+
+
+.fade-in {
+  animation: fade .4s ease-in;
+}
+
+.slide-in {
+  animation: slide .4s ease-out;
+}
+
+@keyframes fade {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slide {
+  from {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
