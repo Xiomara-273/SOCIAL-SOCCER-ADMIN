@@ -3,13 +3,15 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { TournamentService } from '../../../../infrastructure/services/tournament.service';
 import { Tournament, TournamentType } from '../../../../core/models/tournament.model';
+import { RoleAdminComponent } from '../../components/role-admin/role-admin.component';
 
 @Component({
   selector: 'app-tournament-admin',
   standalone: true,
-  imports: [CommonModule, FormsModule],
+  imports: [CommonModule, FormsModule, ],
   templateUrl: './tournament-admin.html',
   styleUrls: ['./tournament-admin.scss']
+
 })
 export class TournamentAdminComponent {
   // Control de UI

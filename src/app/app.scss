@@ -2,6 +2,7 @@ main {
   min-height: calc(100vh - 70px); // Resta la altura del navbar
   background: radial-gradient(circle at top right, #1a2a3a, #0a0e14);
   color: white;
-  padding: 40px;
+  padding-top: 100px !important;
   font-family: 'Segoe UI', sans-serif;
+ 
 }

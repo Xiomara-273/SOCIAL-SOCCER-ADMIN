@@ -1,16 +1,42 @@
 <nav class="navbar">
   <div class="nav-logo">
-    <span class="ball">⚽</span>
-    <span class="text">SOCIAL<span class="pro">SOCCER</span></span>
+    <span class="ball-icon">⚽</span> SOCIALSOCCER
+  </div>
+  
+  <div class="nav-links">
+    <a routerLink="/admin/tournaments" routerLinkActive="active-link">🏆 Torneos</a>
+    <a routerLink="/admin/enrollments" routerLinkActive="active-link">📝 Inscripciones</a>
+    <a routerLink="/dashboard" routerLinkActive="active-link">📊 Dashboard</a>
+    <a routerLink="/roles-admin" routerLinkActive="active-link">🛡️ Gestión de Roles</a>
   </div>
 
-  <ul class="nav-links">
-    <li><a routerLink="/admin/tournaments" routerLinkActive="active">🏆 Torneos</a></li>
-    <li><a routerLink="/admin/enrollments" routerLinkActive="active">📝 Inscripciones</a></li>
-    <li><a routerLink="/dashboard" routerLinkActive="active">📊 Dashboard</a></li>
-  </ul>
+ <div class="nav-status">
+  <div class="role-selector">
+    <button class="role-btn">
+      <span class="status-dot green"></span>
+      <span class="role-text">ADMIN MODE</span>
+      <span class="arrow">▾</span>
+    </button>
 
-  <div class="nav-user">
-    <span class="status-online"></span> Admin Mode
+    <div class="role-menu">
+      <div class="menu-header">CAMBIAR ENTORNO</div>
+      
+      <a href="http://localhost:4200" class="menu-item active">
+        <span class="dot green"></span>
+        <div class="item-info">
+          <span class="title">Administrador</span>
+          <span class="desc">Gestión total</span>
+        </div>
+      </a>
+
+      <a href="http://localhost:4201" class="menu-item">
+        <span class="dot blue"></span>
+        <div class="item-info">
+          <span class="title">Cliente</span>
+          <span class="desc">Vista de usuario</span>
+        </div>
+      </a>
+    </div>
   </div>
+</div>
 </nav>

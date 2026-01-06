@@ -1,0 +1,135 @@
+.admin-container {
+  // 1. OCUPAR TODA LA PANTALLA
+  width: 100%;
+  min-height: 100vh;
+  margin: 10;
+  padding: 100px 40px;
+  box-sizing: border-box;
+
+  // 2. EL FONDO (Imagen + Luces de estadio)
+  background: 
+    linear-gradient(rgba(15, 23, 42, 0.85), rgba(15, 23, 42, 0.95)), // Capa oscura para leer bien
+    url('https://img.freepik.com/vector-premium/fondo-futbol-abstracto-gradiente_52683-65324.jpg') no-repeat center center;
+  background-size: cover; // Hace que la imagen no se repita y se estire
+  background-attachment: fixed; // El balón se queda quieto al bajar con el mouse
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 35px;
+
+  .glass-card {
+    width: 100%;
+    max-width: 900px;
+    background: rgba(15, 23, 42, 0.8);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    padding: 35px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+  }
+
+  .title-gradient {
+    background: linear-gradient(90deg, #00f2fe, #44ffaa);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-size: 1.5rem; // Letra más pequeña y fina
+    font-weight: 700;
+    margin-bottom: 25px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .form-grid {
+    display: flex;
+    gap: 25px;
+    margin-bottom: 30px;
+
+    .form-group {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+
+      label {
+        color: #94a3b8;
+        font-size: 0.85rem; // Letra rebajada
+        font-weight: 500;
+      }
+
+      input {
+        padding: 12px 16px;
+        background: rgba(0, 0, 0, 0.3);
+        border: 1px solid rgba(0, 242, 254, 0.3); // Borde cyan sutil
+        border-radius: 10px;
+        color: #e2e8f0;
+        font-size: 0.9rem; // Letra de input más pequeña
+        transition: all 0.3s;
+
+        &:focus {
+          border-color: #44ffaa;
+          box-shadow: 0 0 10px rgba(68, 255, 170, 0.2);
+          outline: none;
+        }
+      }
+    }
+  }
+
+  .btn-primary {
+    background: linear-gradient(90deg, #00f2fe, #44ffaa);
+    color: #0f172a; // Texto oscuro para que resalte en el botón brillante
+    border: none;
+    padding: 10px 25px;
+    border-radius: 50px;
+    font-weight: 800;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    cursor: pointer;
+    box-shadow: 0 0 15px rgba(0, 242, 254, 0.4);
+    transition: all 0.3s;
+
+    &:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 0 25px rgba(68, 255, 170, 0.6);
+    }
+  }
+
+  .custom-table {
+    width: 100%;
+    border-collapse: collapse;
+
+    th {
+      color: #94a3b8;
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      padding: 15px;
+      text-align: left;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    td {
+      padding: 15px;
+      color: #cbd5e1;
+      font-size: 0.9rem; // Letra de tabla rebajada
+      border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+
+      strong {
+        color: #00f2fe;
+        font-weight: 600;
+      }
+    }
+  }
+
+  .btn-icon {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 8px;
+    border-radius: 8px;
+    margin-left: 10px;
+    cursor: pointer;
+    transition: 0.2s;
+    &:hover { background: rgba(255, 255, 255, 0.15); }
+  }
+}
