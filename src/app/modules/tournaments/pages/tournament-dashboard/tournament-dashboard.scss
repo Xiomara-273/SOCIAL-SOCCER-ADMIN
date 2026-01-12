@@ -144,3 +144,24 @@ $neon-red: #ff4d4d;    //
 }
 
 @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+
+/* Ajuste para que los botones neon funcionen en móvil */
+@media screen and (max-width: 600px) {
+  .dashboard-grid { 
+    display: flex !important;
+    flex-direction: column !important; /* Los botones se ponen uno debajo de otro */
+    padding: 15px !important;
+    gap: 12px !important;
+  }
+
+  .btn-neon { 
+    width: 100% !important; /* Los botones de 60px ahora ocupan todo el ancho */
+    height: 60px !important; /* Mantenemos el tamaño que pidió el ingeniero */
+    font-size: 14px !important;
+    justify-content: center !important;
+  }
+  
+  .panel-header h1 {
+    font-size: 1.5rem !important; /* Título más pequeño para que no se corte */
+  }
+}

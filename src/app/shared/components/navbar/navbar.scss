@@ -3,16 +3,24 @@
   top: 0;
   left: 0;
   width: 100%;
-  height: 65px; // Altura fija para control total
+  height: 65px;
   display: flex;
   justify-content: space-between;
-  align-items: center; // Mantiene Logo, Links y Status centrados verticalmente
+  align-items: center;
   padding: 0 40px;
-  background: rgba(15, 23, 42, 0.9); // Azul profundo traslúcido
+  background: rgba(15, 23, 42, 0.9);
   backdrop-filter: blur(12px);
   border-bottom: 1px solid rgba(255, 255, 255, 0.05);
   z-index: 2000;
   box-sizing: border-box;
+
+  // AJUSTE MÓVIL: Reducción de padding y scroll horizontal
+  @media (max-width: 768px) {
+    padding: 0 15px;
+    height: auto; // Permite que se ajuste si el contenido es mucho
+    min-height: 65px;
+    flex-wrap: wrap; // Permite que los elementos bajen si es necesario
+  }
 
   .nav-logo {
     color: #44ffaa;
@@ -22,26 +30,44 @@
     display: flex;
     align-items: center;
     gap: 8px;
+
+    @media (max-width: 768px) {
+      font-size: 0.8rem;
+      margin-bottom: 5px;
+      margin-top: 5px;
+    }
   }
 
   .nav-links {
     display: flex;
-    align-items: center; // ESTO ALINEA LOS TEXTOS LARGOS (Gestión de Equipos, etc.)
+    align-items: center;
     gap: 30px;
-    height: 100%; // Ocupa toda la altura para que el centrado sea perfecto
+    height: 100%;
+
+    // AJUSTE MÓVIL: Crea una fila deslizable
+    @media (max-width: 768px) {
+      order: 3; // Manda los links abajo del logo y el status
+      width: 100%;
+      overflow-x: auto; // Habilita el deslizamiento lateral
+      padding: 10px 0;
+      gap: 20px;
+      scrollbar-width: none; // Oculta barra en Firefox
+      &::-webkit-scrollbar { display: none; } // Oculta barra en Chrome/Safari
+    }
 
     a {
       color: #94a3b8;
       text-decoration: none;
-      font-size: 0.75rem; // Letra rebajada y fina
+      font-size: 0.75rem;
       font-weight: 600;
       text-transform: uppercase;
       letter-spacing: 0.5px;
       transition: all 0.3s ease;
       display: flex;
-      align-items: center; // Centra el texto dentro del enlace
+      align-items: center;
       height: 100%;
       position: relative;
+      white-space: nowrap; // IMPORTANTE: Evita que el texto salte de línea
 
       &:hover {
         color: #fff;
@@ -66,7 +92,11 @@
   .nav-status {
     position: relative;
     display: flex;
-    align-items: center; // Alinea el selector de roles al centro
+    align-items: center;
+
+    @media (max-width: 768px) {
+      margin-top: 5px;
+    }
 
     .role-selector {
       position: relative;
@@ -89,6 +119,10 @@
       gap: 12px;
       cursor: pointer;
       transition: 0.3s;
+
+      @media (max-width: 768px) {
+        padding: 6px 12px;
+      }
 
       &:hover { background: rgba(255, 255, 255, 0.1); }
 
