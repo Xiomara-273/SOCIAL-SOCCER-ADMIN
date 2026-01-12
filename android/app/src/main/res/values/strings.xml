@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">Social Soccer Admin</string>
+    <string name="title_activity_main">Social Soccer Admin</string>
+    <string name="package_name">com.socialsoccer.admin</string>
+    <string name="custom_url_scheme">com.socialsoccer.admin</string>
+</resources>

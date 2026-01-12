@@ -1,0 +1,5 @@
+package com.socialsoccer.admin;
+
+import com.getcapacitor.BridgeActivity;
+
+public class MainActivity extends BridgeActivity {}
