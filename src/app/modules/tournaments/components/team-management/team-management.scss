@@ -1,8 +1,8 @@
 // VARIABLES DE COLOR (Temática Social Soccer)
-$bg-dark: #0f0f0f;
+$bg-dark:  #1a2a3a;
 $card-bg: #1a1a1a;
-$input-bg: #252525;
-$primary-purple: #6200ee;
+$input-bg: #323131;
+$primary-purple: #1bb376;
 $accent-green: #00ff88;
 $text-main: #faf7f7;
 $text-muted: #888;
@@ -28,7 +28,7 @@ $info: #3498db;
       font-weight: 600;
       letter-spacing: 1px;
       margin: 0;
-      color: #0a8943;
+      color: #327932;
     }
 
     .btn-primary {
@@ -52,7 +52,7 @@ $info: #3498db;
   // FORMULARIO (CREATE / UPDATE)
   .form-card {
     background: $card-bg;
-    border: 1px solid rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(222, 214, 214, 0.05);
     padding: 30px;
     border-radius: 16px;
     margin-bottom: 40px;

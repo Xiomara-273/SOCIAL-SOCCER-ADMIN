@@ -1,6 +1,9 @@
+$dark-bg: #0f172a; 
+$neon-blue: #00d2ff;
+
 .admin-container {
   padding: 30px;
-  background: #000;
+  background: radial-gradient(circle at top right, #1a2a3a, $dark-bg);
   min-height: 100vh;
   color: #fff;
 
@@ -13,8 +16,8 @@
     .title { font-size: 1.8rem; font-weight: 900; text-transform: uppercase; font-style: italic; }
     
     .btn-new-match {
-      background: #4f46e5;
-      color: white;
+     background: linear-gradient(90deg, #00f2fe, #44ffaa);
+      color: rgb(16, 15, 15);
       padding: 12px 24px;
       border-radius: 15px;
       border: none;
@@ -139,7 +142,7 @@
         text-transform: uppercase;
         cursor: pointer;
         &.active {
-          background: #4f46e5;
+         background: linear-gradient(90deg, #00f2fe, #44ffaa);
           color: white;
           border-radius: 10px;
           box-shadow: 0 4px 12px rgba(79, 70, 229, 0.3);
@@ -270,7 +273,7 @@
       font-weight: 600;
       outline: none;
       transition: all 0.3s;
-      &:focus { border-color: #4f46e5; background: rgba(79, 70, 229, 0.05); }
+      &:focus { border-color: #4321cc; background: rgba(79, 70, 229, 0.05); }
     }
   }
 
@@ -288,7 +291,7 @@
       transition: all 0.3s;
     }
     .btn-cancel { background: #1a1a1a; color: #666; border: 1px solid #333; &:hover { background: #222; color: #fff; } }
-    .btn-save { background: #4f46e5; color: white; border: none; &:hover { background: #4338ca; transform: translateY(-2px); } }
+    .btn-save {  background: linear-gradient(90deg, #00f2fe, #44ffaa); color: rgb(19, 1, 1); border: none; &:hover { background: #28be91; transform: translateY(-2px); } }
   }
 }
 
