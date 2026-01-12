@@ -3,23 +3,20 @@
   top: 0;
   left: 0;
   width: 100%;
-  height: 65px;
+  height: 65px; // Altura fija para control total
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  align-items: center; // Mantiene Logo, Links y Status centrados verticalmente
   padding: 0 40px;
-  background: rgba(15, 23, 42, 0.9);
+  background: rgba(15, 23, 42, 0.9); // Azul profundo traslúcido
   backdrop-filter: blur(12px);
   border-bottom: 1px solid rgba(255, 255, 255, 0.05);
   z-index: 2000;
   box-sizing: border-box;
 
-  // AJUSTE MÓVIL: Reducción de padding y scroll horizontal
-  @media (max-width: 768px) {
-    padding: 0 15px;
-    height: auto; // Permite que se ajuste si el contenido es mucho
-    min-height: 65px;
-    flex-wrap: wrap; // Permite que los elementos bajen si es necesario
+  // AJUSTE PARA TABLETAS Y MÓVILES
+  @media (max-width: 992px) {
+    padding: 0 20px;
   }
 
   .nav-logo {
@@ -30,44 +27,85 @@
     display: flex;
     align-items: center;
     gap: 8px;
+  }
 
-    @media (max-width: 768px) {
-      font-size: 0.8rem;
-      margin-bottom: 5px;
-      margin-top: 5px;
+  // NUEVO: BOTÓN HAMBURGUESA (Solo visible en móvil)
+  .hamburger {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    z-index: 3001;
+    padding: 10px;
+
+    span {
+      display: block;
+      width: 25px;
+      height: 2px;
+      background: #44ffaa;
+      transition: 0.3s;
+      box-shadow: 0 0 5px rgba(68, 255, 170, 0.5);
+    }
+
+    @media (max-width: 992px) {
+      display: flex;
+    }
+
+    // Animación a "X" cuando está abierto
+    &.is-active {
+      span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+      span:nth-child(2) { opacity: 0; }
+      span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
     }
   }
 
   .nav-links {
     display: flex;
-    align-items: center;
+    align-items: center; // ESTO ALINEA LOS TEXTOS LARGOS
     gap: 30px;
-    height: 100%;
+    height: 100%; // Ocupa toda la altura para que el centrado sea perfecto
 
-    // AJUSTE MÓVIL: Crea una fila deslizable
-    @media (max-width: 768px) {
-      order: 3; // Manda los links abajo del logo y el status
-      width: 100%;
-      overflow-x: auto; // Habilita el deslizamiento lateral
-      padding: 10px 0;
-      gap: 20px;
-      scrollbar-width: none; // Oculta barra en Firefox
-      &::-webkit-scrollbar { display: none; } // Oculta barra en Chrome/Safari
+    // MODO MÓVIL (DESPLEGABLE)
+    @media (max-width: 992px) {
+      display: none; // Se oculta por defecto
+      &.open {
+        display: flex;
+        flex-direction: column;
+        position: fixed;
+        top: 65px; // Justo debajo del navbar
+        left: 0;
+        width: 100%;
+        height: auto;
+        background: rgba(15, 23, 42, 0.98);
+        backdrop-filter: blur(15px);
+        padding: 20px;
+        border-bottom: 1px solid rgba(68, 255, 170, 0.3);
+        animation: fadeIn 0.3s ease-out;
+      }
     }
 
     a {
       color: #94a3b8;
       text-decoration: none;
-      font-size: 0.75rem;
+      font-size: 0.75rem; // Letra rebajada y fina
       font-weight: 600;
       text-transform: uppercase;
       letter-spacing: 0.5px;
       transition: all 0.3s ease;
       display: flex;
-      align-items: center;
+      align-items: center; // Centra el texto dentro del enlace
       height: 100%;
       position: relative;
-      white-space: nowrap; // IMPORTANTE: Evita que el texto salte de línea
+      white-space: nowrap;
+
+      @media (max-width: 992px) {
+        width: 100%;
+        padding: 15px 10px;
+        font-size: 0.85rem;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+      }
 
       &:hover {
         color: #fff;
@@ -92,10 +130,10 @@
   .nav-status {
     position: relative;
     display: flex;
-    align-items: center;
+    align-items: center; // Alinea el selector de roles al centro
 
-    @media (max-width: 768px) {
-      margin-top: 5px;
+    @media (max-width: 600px) {
+      display: none; // Ocultamos el selector de roles en móviles muy pequeños para dar espacio
     }
 
     .role-selector {
@@ -119,10 +157,6 @@
       gap: 12px;
       cursor: pointer;
       transition: 0.3s;
-
-      @media (max-width: 768px) {
-        padding: 6px 12px;
-      }
 
       &:hover { background: rgba(255, 255, 255, 0.1); }
 

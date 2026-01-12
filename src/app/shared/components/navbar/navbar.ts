@@ -1,12 +1,25 @@
 import { Component } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-navbar',
-  standalone: true,
-  imports: [CommonModule, RouterModule],
   templateUrl: './navbar.html',
   styleUrls: ['./navbar.scss']
 })
-export class NavbarComponent {}
+export class NavbarComponent {
+  // Variable para controlar si el menú móvil está abierto o cerrado
+  isMenuOpen: boolean = false;
+
+  /**
+   * Alterna el estado del menú (Abrir/Cerrar)
+   */
+  toggleMenu(): void {
+    this.isMenuOpen = !this.isMenuOpen;
+  }
+
+  /**
+   * Cierra el menú al hacer clic en un link o fuera de él
+   */
+  closeMenu(): void {
+    this.isMenuOpen = false;
+  }
+}

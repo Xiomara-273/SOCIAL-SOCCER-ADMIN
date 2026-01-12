@@ -2,52 +2,47 @@
   <div class="nav-logo">
     <span class="ball-icon">⚽</span> SOCIALSOCCER
   </div>
+
+  <button class="hamburger" (click)="toggleMenu()" [class.is-active]="isMenuOpen">
+    <span></span>
+    <span></span>
+    <span></span>
+  </button>
   
-  <div class="nav-links">
-      <a routerLink="/dashboard" routerLinkActive="active-link">📊 Dashboard</a>
-    <a routerLink="/admin/tournaments" routerLinkActive="active-link">🏆 Torneos</a>
-    <a routerLink="/admin/enrollments" routerLinkActive="active-link">📝 Inscripciones</a>
-    <a routerLink="/roles-admin" routerLinkActive="active-link">🛡️ Gestión de Roles</a>
-    <li class="nav-item">
-  <a routerLink="/equipos" routerLinkActive="active-link">
-    <i class="fas fa-users-cog"></i> 
-    <span>Gestión de Equipos</span>
-  </a>
-</li>
-<ul> <li><a routerLink="/partidos" 
-           routerLinkActive="active-link"
-           class="tu-clase-de-estilo">
-           <span>GESTIÓN PARTIDOS</span>
-        </a></li> </ul>
+  <div class="nav-links" [class.open]="isMenuOpen">
+    <a routerLink="/dashboard" routerLinkActive="active-link" (click)="closeMenu()">📊 Dashboard</a>
+    <a routerLink="/admin/tournaments" routerLinkActive="active-link" (click)="closeMenu()">🏆 Torneos</a>
+    <a routerLink="/admin/enrollments" routerLinkActive="active-link" (click)="closeMenu()">📝 Inscripciones</a>
+    <a routerLink="/roles-admin" routerLinkActive="active-link" (click)="closeMenu()">🛡️ Gestión de Roles</a>
+    <a routerLink="/equipos" routerLinkActive="active-link" (click)="closeMenu()">👥 Gestión de Equipos</a>
+    <a routerLink="/partidos" routerLinkActive="active-link" (click)="closeMenu()">⚽ GESTIÓN PARTIDOS</a>
   </div>
 
- <div class="nav-status">
-  <div class="role-selector">
-    <button class="role-btn">
-      <span class="status-dot green"></span>
-      <span class="role-text">ADMIN MODE</span>
-      <span class="arrow">▾</span>
-    </button>
+  <div class="nav-status">
+    <div class="role-selector">
+      <button class="role-btn">
+        <span class="status-dot green"></span>
+        <span class="role-text">ADMIN MODE</span>
+        <span class="arrow">▾</span>
+      </button>
 
-    <div class="role-menu">
-      <div class="menu-header">CAMBIAR ENTORNO</div>
-      
-      <a href="http://localhost:4200" class="menu-item active">
-        <span class="dot green"></span>
-        <div class="item-info">
-          <span class="title">Administrador</span>
-          <span class="desc">Gestión total</span>
-        </div>
-      </a>
-
-      <a href="http://localhost:4201" class="menu-item">
-        <span class="dot blue"></span>
-        <div class="item-info">
-          <span class="title">Cliente</span>
-          <span class="desc">Vista de usuario</span>
-        </div>
-      </a>
+      <div class="role-menu">
+        <div class="menu-header">CAMBIAR ENTORNO</div>
+        <a href="http://localhost:4200" class="menu-item active">
+          <span class="dot green"></span>
+          <div class="item-info">
+            <span class="title">Administrador</span>
+            <span class="desc">Gestión total</span>
+          </div>
+        </a>
+        <a href="http://localhost:4201" class="menu-item">
+          <span class="dot blue"></span>
+          <div class="item-info">
+            <span class="title">Cliente</span>
+            <span class="desc">Vista de usuario</span>
+          </div>
+        </a>
+      </div>
     </div>
   </div>
-</div>
 </nav>
